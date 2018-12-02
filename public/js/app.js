@@ -11933,7 +11933,7 @@ module.exports = Vue;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(39);
+module.exports = __webpack_require__(40);
 
 
 /***/ }),
@@ -11944,7 +11944,6 @@ module.exports = __webpack_require__(39);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_buefy__);
-
 __webpack_require__(12);
 
 window.Vue = __webpack_require__(9);
@@ -11953,6 +11952,14 @@ window.Vue = __webpack_require__(9);
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+//var app = new Vue({
+//    el: '#app',
+//    data: {}
+//    });
+
+
+__webpack_require__(39);
 
 /***/ }),
 /* 12 */
@@ -55412,6 +55419,53 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 /* 39 */
+/***/ (function(module, exports) {
+
+var accordions = document.getElementsByClassName('has-submenu');
+var adminSlideButton = document.getElementById('admin-slideout-button');
+
+function setSubmenuStyles(submenu, maxHeight, margins) {
+  submenu.style.maxHeight = maxHeight;
+  submenu.style.marginTop = margins;
+  submenu.style.marginBottom = margins;
+}
+
+adminSlideButton.onclick = function () {
+  this.classList.toggle('is-active');
+  document.getElementById('admin-side-menu').classList.toggle('is-active');
+  var cols = document.getElementsByClassName('management-area');
+
+  for (i = 0; i < cols.length; i++) {
+    if (cols[i].style.left === "210px") {
+      cols[i].style.left = "0px";
+    } else {
+      cols[i].style.left = "210px";
+    }
+  }
+};
+
+for (var i = 0; i < accordions.length; i++) {
+  if (accordions[i].classList.contains('is-active')) {
+    var submenu = accordions[i].nextElementSibling;
+    setSubmenuStyles(submenu, submenu.scrollHeight + "px", "0.75em");
+  }
+
+  accordions[i].onclick = function () {
+    this.classList.toggle('is-active');
+
+    var submenu = this.nextElementSibling;
+    if (submenu.style.maxHeight) {
+      // menu is open, we need to close it now
+      setSubmenuStyles(submenu, null, null);
+    } else {
+      // meny is close, so we need to open it
+      setSubmenuStyles(submenu, submenu.scrollHeight + "px", "0.75em");
+    }
+  };
+}
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

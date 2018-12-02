@@ -1,0 +1,61 @@
+
+#admin-side-menu {
+  position: absolute;
+  top: 4rem;
+  left: -200px;
+  bottom: 0;
+  width: 200px;
+  background-color: white;
+  overflow-y: scroll;
+  z-index: 100;
+  transition: left 0.3s ease-in-out;
+ 
+  @include desktop {
+    left: 0;
+  }
+}
+
+.margin-left-sidemenu{
+    left: 0px;
+}
+
+#admin-side-menu.is-active {
+    left: 0;
+    transition: left 0.3s ease-in-out;
+  } 
+
+.management-area{
+    position: absolute;
+    top: 4rem;
+    left: 210px;
+    right: 10px;
+}
+
+.flex-container{
+    margin: 10px 25px;
+}
+
+.submenu{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-burger {
+  border: none;
+}
+
+#admin-slideout-button {
+  transition: 0.3s;
+ 
+}
+
+#admin-slideout-button.is-active {
+    transition: 0.3s;
+    transform: rotateY(180deg);
+}

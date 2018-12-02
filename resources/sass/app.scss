@@ -7,13 +7,27 @@
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "~font-awesome/scss/font-awesome.scss";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import "~bulma/bulma.sass";
 
-@import "node_modules/bulma/bulma";
+@import "~buefy/src/scss/buefy.scss";
 
-@import "node_modules/buefy/src/scss/buefy";
+//Custom CASS Pages
+
+@import "overrides.scss";
+@import "helpers.scss";
+@import "styles.scss";
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar{
+    min-height: 4.5rem;
+}
+
+.navbar-item img{
+    min-height: 2.8rem;
 }

@@ -1,0 +1,30 @@
+.menu{
+    position: absolute;
+    top: 4rem;
+    bottom: 0;
+    width: 200px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.management-area{
+    
+    top: 4rem;
+    left: 200px;
+    right: 0;
+}
+
+.flex-container{
+    margin: 10px 25px;
+}
+
+.submenu{
+    max-height: 0;
+    overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul{
+    margin-top: 0;
+  margin-bottom: 0;
+}
